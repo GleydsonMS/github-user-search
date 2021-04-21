@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-h1, p, a {
+h1, h2, p, a, span {
     font-family: Roboto;
     font-style: normal;
 }

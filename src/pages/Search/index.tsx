@@ -1,4 +1,6 @@
 import Button from '../../core/components/Button';
+import Result from '../../core/components/Result';
+import Loader from '../../core/components/Result/Loader';
 import './styles.css';
 
 const Search = () => {
@@ -12,13 +14,12 @@ const Search = () => {
                     type="text"
                     placeholder="Usuário Github"
                 />
-                <div className="button">
+                <div className="button-1">
                     <Button title="Encontrar" />
                 </div>
             </div>
-            <div className="result-container">
-                
-            </div>
+            {/* <Result /> */}
+            {/* <Loader /> */}
         </div>
     );
 }
