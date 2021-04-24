@@ -6,7 +6,7 @@ const Loader = () => {
     return (
         <div className="result-container">
             <ImageLoader />
-            <div className="informations">
+            <div className="informations-loader">
                 <InfoLoader />
             </div>
         </div>

@@ -1,11 +1,10 @@
 import Button from '../../core/components/Button';
-import Header from '../../core/components/Header';
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 const Home = () => {
     return (
         <>
-            <Header />
             <div className="container">
                 <h1 className="title-container">
                     Desafio do Capítulo 3, <br /> 
@@ -21,7 +20,9 @@ const Home = () => {
                     de Mateusz Wierzbicki: 
                     <a className="link" href="mailto:antforfigma@gmail.com"> antforfigma@gmail.com</a> <br /> 
                 </p>
-                <Button title="Começar" />
+                <Link to="/search">
+                    <Button title="Começar" />
+                </Link>
             </div>
         </>
     )

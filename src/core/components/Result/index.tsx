@@ -1,44 +1,51 @@
+import { FormResult } from '../../types/Result';
 import Button from '../Button';
 import './styles.css';
 
-const Result = () => {
+type Props = {
+    result: FormResult | undefined;
+}
+
+const Result = ({ result }:Props) => {
     return (
         <div className="result-container">
                 <div className="col-1">
                     <img 
                         className="image-profile"
-                        src="https://avatars.githubusercontent.com/u/8749369?v=4" 
-                        alt="GleydsonMS"
+                        src={result?.avatar_url}
+                        alt={result?.login}
                     />
                     <div className="button-2">
-                        <Button title="Ver perfil" />
+                        <a href={result?.html_url}>
+                            <Button title="Ver perfil" />
+                        </a>
                     </div>
                 </div>
                 <div className="col-2">
                     <div className="statistics">
                         <span className="index">
-                            Repositórios públicos: 62
+                            Repositórios públicos: {result?.public_repos}
                         </span>
                         <span className="index">
-                            Seguidores: 127
+                            Seguidores: {result?.followers}
                         </span>
                         <span className="index">
-                            Seguindo: 416
+                            Seguindo: {result?.following}
                         </span>
                     </div>
                     <div className="informations">
                         <h2 className="result-title">Informações</h2>
                         <span className="topic">
-                            Empresa: @ZupIT
+                            Empresa: {result?.company}
                         </span>
                         <span className="topic">
-                            Website/Blog: https://thewashington.dev
+                            Website/Blog: {result?.blog}
                         </span>
                         <span className="topic">
-                            Localidade: Uberlândia
+                            Localidade: {result?.location}
                         </span>
                         <span className="topic">
-                            Membro desde: 19/10/2013
+                            Membro desde: {result?.created_at}
                         </span>
                     </div>
                 </div>
