@@ -1,4 +1,5 @@
 import { FormResult } from '../../types/Result';
+import dayjs  from 'dayjs';
 import Button from '../Button';
 import './styles.css';
 
@@ -7,6 +8,10 @@ type Props = {
 }
 
 const Result = ({ result }:Props) => {
+    const date = result?.created_at;
+
+    const formatDate = dayjs(date).locale('pt-BR').format('DD/MM/YYYY');
+
     return (
         <div className="result-container">
                 <div className="col-1">
@@ -36,16 +41,16 @@ const Result = ({ result }:Props) => {
                     <div className="informations">
                         <h2 className="result-title">Informações</h2>
                         <span className="topic">
-                            Empresa: {result?.company}
+                            Empresa: <span className="topic-result"> {result?.company} </span>
                         </span>
                         <span className="topic">
-                            Website/Blog: {result?.blog}
+                            Website/Blog: <span className="topic-result"> {result?.blog}</span> 
                         </span>
                         <span className="topic">
-                            Localidade: {result?.location}
+                            Localidade: <span className="topic-result">{result?.location}</span> 
                         </span>
                         <span className="topic">
-                            Membro desde: {result?.created_at}
+                            Membro desde: <span className="topic-result">{formatDate}</span> 
                         </span>
                     </div>
                 </div>

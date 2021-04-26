@@ -84,3 +84,8 @@
     margin: 0 18px 6px 14px;
     padding-left: 10px;
 }
+
+.topic-result {
+    font-weight: 400;
+    margin-left: 4px;
+}
